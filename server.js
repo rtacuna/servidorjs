@@ -9,7 +9,7 @@ const server = http.createServer((req, res) => {
   }
 
   visits.push({
-    display: IP: ${req.headers['x-forwarded-for'] || req.connection.remoteAddress }, Time: ${new Date()},
+    display: IP: ${req.headers['x-forwarded-for'] || req.connection.remoteAddress }, Time: ${new Date()};
     date: Date.now()
   });
 
