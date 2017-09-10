@@ -4,7 +4,7 @@ const PORT = 3000;
 let visits = [];
 
 const server = http.createServer((req, res) => {
-  if (visits.length > 19){
+  if (visits.length > 10){
     var x = visits.sort((a , b) => a.date - b.date).shift();
   }
 
@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
     date: Date.now()
   });
 
-  res.end(visits.sort((a , b) => b.date - a.date).map(obj => obj.display).join('\n'));
+  res.end(visits.sort((a , b) => b.date - a.date).map(obj => obj.display, obj.date).join('\n'));
 })
 
 server.listen(PORT, (err) => {
